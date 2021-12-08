@@ -14,6 +14,10 @@ func main() {
 	r := gin.Default()
 	r.POST("/create", handler.CreateUser)
 	r.GET("/get", handler.GetAllUser)
+	r.GET("/:id", handler.GetUser)
+	r.DELETE("/delete/:id", handler.DeleteUser)
+	r.PUT("/update/:id", handler.UpdateUser)
+	r.DELETE("/delete", handler.DeleteAll)
 
 	godotenv.Load()
 
@@ -21,13 +25,3 @@ func main() {
 	r.Run(":8080")
 
 }
-
-/*
-func init() {
-	err := godotenv.Load()
-	if err != nil {
-		fmt.Println("err while loading .env")
-	}
-
-}
-*/

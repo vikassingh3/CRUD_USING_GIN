@@ -10,6 +10,7 @@ import (
 )
 
 // DB gorm connector
+//DB contains information for current db connection
 var DB *gorm.DB
 
 // connection with database
